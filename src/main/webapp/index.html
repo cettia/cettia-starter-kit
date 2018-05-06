@@ -1,3 +1,43 @@
 <!DOCTYPE html>
-<title>index</title>
-<script src="https://unpkg.com/cettia-client@1.0.1/cettia-browser.js"></script>
+<html>
+<head>
+  <title>Cettia starter kit</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.14.0/themes/prism.min.css,npm/prismjs@1.14.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <style>
+    body {
+      max-width: 75rem;
+      margin: 0 auto;
+    }
+    p {
+      line-height: 1.6rem;
+    }
+    pre {
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  <p>This page loads <code>cettia</code> object for you to play with the <a href="http://cettia.io" target="_blank">Cettia</a> client interactively. Open the JavaScript console of the developer tools and run code snippets from the tutorial, <a href="http://cettia.io/guides/cettia-tutorial/" target="_blank">Building real-time web applications with Cettia</a>.</p>
+  <p>Otherwise, start with the following full-blown example:</p>
+<pre><code class="language-javascript line-numbers">var socket = cettia.open("http://127.0.0.1:8080/cettia?username=flowersinthesand");
+socket.on("connecting", () => console.log(socket.state()));
+socket.on("open", () => console.log(socket.state()));
+socket.on("close", () => console.log(socket.state()));
+socket.on("waiting", (delay, attempts) => console.log(socket.state(), delay, attempts));
+
+socket.on("echo", data => console.log("open", data));
+socket.on("chat", data => console.log("chat", data));
+socket.on("myself", data => console.log("myself", data));
+
+socket.once("open", () => {
+  socket.send("echo", "Hello world");
+  socket.send("chat", {text: "I'm a text"});
+  socket.send("myself", {text: "I'm a text", binary: new TextEncoder().encode("I'm a binary")});
+});
+</code></pre>
+  <p>If you have any question or feedback, please feel free to share them on <a href="http://groups.google.com/group/cettia" target="_blank">Cettia Groups</a>.</p>
+  
+  <script src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.14.0,npm/prismjs@1.14.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="https://unpkg.com/cettia-client@1.0.1/cettia-browser.js"></script>
+</body>
+</html>
