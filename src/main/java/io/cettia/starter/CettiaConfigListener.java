@@ -32,7 +32,7 @@ public class CettiaConfigListener implements ServletContextListener {
   public void contextInitialized(ServletContextEvent event) {
     // Cettia part
 //    ClusteredServer server = new ClusteredServer();
-     Server server = new DefaultServer();
+    Server server = new DefaultServer();
     HttpTransportServer httpTransportServer = new HttpTransportServer().ontransport(server);
     WebSocketTransportServer wsTransportServer = new WebSocketTransportServer().ontransport(server);
 
