@@ -19,24 +19,43 @@
 <body>
   <p>This page loads <code>cettia</code> object for you to play with the <a href="http://cettia.io" target="_blank">Cettia</a> client interactively. Open the JavaScript console of the developer tools and run code snippets from the tutorial, <a href="http://cettia.io/guides/cettia-tutorial/" target="_blank">Building real-time web applications with Cettia</a>.</p>
   <p>Otherwise, start with the following full-blown example:</p>
-<pre><code class="language-javascript line-numbers">var socket = cettia.open("http://127.0.0.1:8080/cettia?username=flowersinthesand");
-socket.on("connecting", () => console.log(socket.state()));
-socket.on("open", () => console.log(socket.state()));
-socket.on("close", () => console.log(socket.state()));
+<pre><code class="language-javascript line-numbers">// ## Opening a Socket
+// Manipulates the below params object to play with the server implementation
+var params = {
+  username: "flowersinthesand",
+  onlyOneSocket: true
+};
+// Let's assume that each key and value are already encoding safe
+var query = Object.keys(params).filter(k => params[k]).map(k => `${k}=${params[k]}`).join("&");
+var socket = cettia.open("/cettia?" + query);
+
+// ## Socket Lifecycle
+var logState = () => console.log(socket.state());
+socket.on("connecting", logState).on("open", logState).on("close", logState);
 socket.on("waiting", (delay, attempts) => console.log(socket.state(), delay, attempts));
 
-socket.on("echo", data => console.log("echo", data));
-socket.on("chat", data => console.log("chat", data));
-socket.on("myself", data => console.log("myself", data));
+// ## Sending and Receiving Events
+["echo", "chat", "myself", "welcome"].forEach(event => {
+  socket.on(event, data => console.log(event, data));
+});
+socket.on("signout", () => {
+  console.log("signout", "You've been signed out since you signed in on another device");
+  // It prevents reconnection
+  socket.close();
+});
 
+// This open event handler registered through `once` is called at maximum once
 socket.once("open", () => {
+  // Sends an echo event to be returned
   socket.send("echo", "Hello world");
+  // Sends a chat event to be broadcast to every sockets in the server
   socket.send("chat", {text: "I'm a text"});
+  // Sends an event to sockets whose username is the same
+  // with composite data consisting of text data and binary data
   socket.send("myself", {text: "I'm a text", binary: new TextEncoder().encode("I'm a binary")});
 });
 </code></pre>
   <p>If you have any question or feedback, please feel free to share them on <a href="http://groups.google.com/group/cettia" target="_blank">Cettia Groups</a>.</p>
-
   <script src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.14.0,npm/prismjs@1.14.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
   <script src="https://unpkg.com/cettia-client@1.0.1/cettia-browser.js"></script>
 </body>
