@@ -23,7 +23,7 @@
 // Manipulates the below params object to play with the server implementation
 var params = {
   username: "flowersinthesand",
-  onlyOneSocket: true
+  onlyOneSocket: false
 };
 // Let's assume that each key and value are already encoding safe
 var query = Object.keys(params).filter(k => params[k]).map(k => `${k}=${params[k]}`).join("&");

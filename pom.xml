@@ -17,7 +17,7 @@
     <dependency>
       <groupId>io.cettia</groupId>
       <artifactId>cettia-server</artifactId>
-      <version>1.1.0-Beta1</version>
+      <version>1.1.0</version>
     </dependency>
     <dependency>
       <groupId>io.cettia.asity</groupId>
