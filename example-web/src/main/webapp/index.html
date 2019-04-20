@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Cettia Starter Kit</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700" />
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<div id="index">
+  <div>
+    <span>Hello,</span>
+    <form>
+      <input autofocus autocomplete="off" name="username" type="text" placeholder="username">
+    </form>
+  </div>
+</div>
+<div id="chat" hidden>
+  <div class="messages-container">
+    <ul>
+      <li class="sender">system</li>
+      <li class="message">This example is created to help you make a quick start with <a href="https://cettia.io/" target="_blank">Cettia</a>. For the details, see the <a href="https://cettia.io/guides/cettia-tutorial/" target="_blank">Getting started</a>.</li>
+    </ul>
+  </div>
+  <footer>
+    <div id="editor">
+      <div contenteditable data-placeholder="Type a message..."></div>
+    </div>
+  </footer>
+</div>
+<!-- Load 'cettia' object via CDN and script tag -->
+<script src="https://cdn.jsdelivr.net/npm/cettia-client/cettia-browser.js"></script>
+<script src="/app.js" async></script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+{
+  "main": "io.cettia.starter.vertx2.CettiaServerVerticle"
+}

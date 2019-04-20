@@ -1,0 +1,101 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+}
+
+input, textarea, select {
+  font-family: inherit;
+}
+
+#index {
+  margin: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+#index > div > * {
+  display: inline-block;
+  font-size: 3rem;
+}
+
+#index > div > form > input {
+  margin-left: 1rem;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-size: inherit;
+}
+
+#chat {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+#chat > div.messages-container {
+  flex: 1 1 auto;
+  position: relative;
+  margin: 1rem;
+  margin-bottom: 0;
+}
+
+#chat > div.messages-container > ul {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow-y: auto;
+  max-height: 100%;
+  padding: 0;
+  margin: 0.5rem;
+  list-style: none;
+}
+
+#chat > div.messages-container > ul > li {
+  white-space: pre-wrap;
+}
+
+#chat > div.messages-container > ul > li.sender {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #2f2f2f;
+}
+
+#chat > div.messages-container > ul > li.message {
+  color: #343434;
+  padding: 0.25rem;
+}
+
+#chat > div.messages-container > ul > li.message:hover {
+  background-color: #f7f7f7;
+}
+
+#editor {
+  margin: 1rem;
+  padding: 0.5rem;
+  color: #2f2f2f;
+}
+
+#editor > div[contenteditable] {
+  padding: 0.25rem;
+  border-bottom: 1px solid #d0d0d0;
+  min-height: 1rem;
+}
+
+#editor > div[contenteditable]:focus {
+  outline: 0;
+  border-bottom: 1px solid #808080;
+}
+
+#editor > div[contenteditable]:empty:not(:focus)::before {
+  content: attr(data-placeholder)
+}
