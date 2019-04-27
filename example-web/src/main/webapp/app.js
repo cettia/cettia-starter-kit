@@ -1,4 +1,4 @@
-// Highlight `socket` to see where and how a socket is used
+// Highlight 'socket' to see where and how a socket is used
 // With https://babeljs.io/repl, you can make the following code compatible with ES5
 document.querySelector("#index form").addEventListener("submit", e => {
   e.preventDefault();
@@ -24,7 +24,7 @@ document.querySelector("#index form").addEventListener("submit", e => {
 
     const $li = document.createElement("li");
     $li.classList.add("message");
-    $li.textContent = `${text}`;
+    $li.textContent = text;
     $messages.appendChild($li);
     $li.scrollIntoView();
   };
