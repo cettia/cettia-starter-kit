@@ -61,6 +61,35 @@ If you prefer to run code snippets on the fly, open the developer tools on this 
 
 Then, you should see that the `cettia` object is available. For your information, every page of [https://cettia.io](https://cettia.io) loads the latest version of `cettia` object so that you can play with the `cettia` object at any time.
 
+### React Native
+
+**Note** It uses Cettia JavaScript Client 1.1.0-SNAPSHOT.
+
+The React Native example is located in the `example-react-native` project.
+
+- [`/example-react-native/App.js`](https://github.com/cettia/cettia-starter-kit/blob/master/example-react-native/App.js)
+
+Make sure that you have set up the React Native development environment. Enter the `example-react-native` npm project, and type the following command.
+
+```
+cd example-react-native
+npm install
+```
+
+Then, you can run the example with React Native CLI as follows.
+
+#### iOS
+
+```
+react-native run-ios
+```
+
+#### Android
+
+```
+react-native run-android
+```
+
 ## Understanding the Example
 
 Here are the user stories implemented in the example.
