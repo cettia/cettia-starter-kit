@@ -8,9 +8,8 @@ document.querySelector("#index form").addEventListener("submit", e => {
   const username = $username.value || $username.placeholder;
 
   // Replaces #index with #chat
-  const $index = document.querySelector("#index");
-  $index.parentElement.removeChild($index);
-  document.querySelector("#chat").hidden = false;
+  document.querySelector("#index").classList.add("inactive");
+  document.querySelector("#chat").classList.remove("inactive");
 
   let oldSender = "system";
   const addMessage = ({sender, text}) => {

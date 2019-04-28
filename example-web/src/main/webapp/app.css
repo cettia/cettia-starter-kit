@@ -3,12 +3,17 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  position: fixed;
   overflow: hidden;
   font-family: 'Roboto', sans-serif;
 }
 
 input, textarea, select {
   font-family: inherit;
+}
+
+.inactive {
+  display: none !important;
 }
 
 #index {
@@ -18,6 +23,10 @@ input, textarea, select {
   justify-content: center;
   width: 100%;
   height: 100%;
+}
+
+#index > div {
+  max-width: 100%;
 }
 
 #index > div > * {
@@ -30,6 +39,7 @@ input, textarea, select {
   border-top: none;
   border-left: none;
   border-right: none;
+  border-radius: 0;
   font-size: inherit;
 }
 
