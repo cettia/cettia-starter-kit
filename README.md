@@ -90,6 +90,24 @@ react-native run-ios
 react-native run-android
 ```
 
+### Node.js
+
+The Node.js example is located in the `example-node` project.
+
+- [`/example-node/main.js`](https://github.com/cettia/cettia-starter-kit/blob/master/example-node/main.js)
+
+You need to have installed Node.js version 4 and above. Enter the `example-web` npm project, install the dependencies, and start main.js.
+
+```
+cd example-node
+npm install
+npm start
+```
+
+#### On the fly
+
+If you prefer to run code snippets on the fly, open a Node.js console and copy the contents of the main.js and paste it into the console. You can deal with the `socket` directly.
+
 ## Understanding the Example
 
 Here are the user stories implemented in the example.

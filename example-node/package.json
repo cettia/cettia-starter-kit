@@ -1,0 +1,12 @@
+{
+  "name": "example",
+  "version": "0.1.0",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "start": "node main"
+  },
+  "dependencies": {
+    "cettia-client": "1.0.2"
+  }
+}
