@@ -63,8 +63,6 @@ Then, you should see that the `cettia` object is available. For your information
 
 ### React Native
 
-**Note** It uses Cettia JavaScript Client 1.1.0-SNAPSHOT.
-
 The React Native example is located in the `example-react-native` project.
 
 - [`/example-react-native/App.js`](https://github.com/cettia/cettia-starter-kit/blob/master/example-react-native/App.js)

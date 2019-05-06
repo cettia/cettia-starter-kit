@@ -7,6 +7,6 @@
     "start": "node main"
   },
   "dependencies": {
-    "cettia-client": "1.0.2"
+    "cettia-client": "1.1.0"
   }
 }
