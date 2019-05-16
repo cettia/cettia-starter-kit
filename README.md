@@ -6,12 +6,12 @@ The easiest way to get started with Cettia is to play with the [Cettia Starter K
 
 ## Running the Starter Kit
 
-The starter kit requires Java 8+ and Maven 3+. Clone or download the repository and run `mvn install`.
+The starter kit requires Java 8+. Clone or download the repository and run `./mvnw install`. If you have installed Maven 3+, you can do `mvn install`.
 
 ```
 git clone https://github.com/cettia/cettia-starter-kit.git
 cd cettia-starter-kit
-mvn install
+./mvnw install
 ```
 
 ### Server
@@ -25,14 +25,14 @@ To run the example, you should integrate it with a web framework first. The star
 
 | Web framework  | Maven project   | Maven command                    | pom.xml                                                                           | Main class                                                                                                                                                              |
 |----------------|-----------------|----------------------------------|-----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Atmosphere     | atmosphere2     | `mvn jetty:run`                  | [pom.xml](https://github.com/cettia/cettia-starter-kit/blob/master/atmosphere2/pom.xml)     | [CettiaInitializer](https://github.com/cettia/cettia-starter-kit/blob/master/atmosphere2/src/main/java/io/cettia/starter/atmosphere2/CettiaInitializer.java)  |
-| Grizzly        | grizzly2        | `mvn clean package exec:java`    | [pom.xml](https://github.com/cettia/cettia-starter-kit/blob/master/grizzly2/pom.xml)        | [CettiaServer](https://github.com/cettia/cettia-starter-kit/blob/master/grizzly2/src/main/java/io/cettia/starter/grizzly2/CettiaServer.java)                  |
-| Java EE        | javaee7         | `mvn jetty:run`                  | [pom.xml](https://github.com/cettia/cettia-starter-kit/blob/master/javaee7/pom.xml)         | [CettiaInitializer](https://github.com/cettia/cettia-starter-kit/blob/master/javaee7/src/main/java/io/cettia/starter/javaee7/CettiaInitializer.java)          |
-| Netty          | netty4          | `mvn clean package exec:java`    | [pom.xml](https://github.com/cettia/cettia-starter-kit/blob/master/netty4/pom.xml)          | [CettiaServer](https://github.com/cettia/cettia-starter-kit/blob/master/netty4/src/main/java/io/cettia/starter/netty4/CettiaServer.java)                      |
-| Spring WebFlux | spring-webflux5 | `mvn spring-boot:run`            | [pom.xml](https://github.com/cettia/cettia-starter-kit/blob/master/spring-webflux5/pom.xml) | [CettiaServer](https://github.com/cettia/cettia-starter-kit/blob/master/spring-webflux5/src/main/java/io/cettia/starter/spring5/CettiaServer.java)            |
-| Spring Web MVC | spring-webmvc4  | `mvn spring-boot:run`            | [pom.xml](https://github.com/cettia/cettia-starter-kit/blob/master/spring-webmvc4/pom.xml)  | [CettiaServer](https://github.com/cettia/cettia-starter-kit/blob/master/spring-webmvc4/src/main/java/io/cettia/starter/spring4/CettiaServer.java )            |
-| Vert.x         | vertx2          | `mvn clean package vertx:runMod` | [pom.xml](https://github.com/cettia/cettia-starter-kit/blob/master/vertx2/pom.xml)          | [CettiaServerVerticle](https://github.com/cettia/cettia-starter-kit/blob/master/vertx2/src/main/java/io/cettia/starter/vertx2/CettiaServerVerticle.java)      |
-|                | vertx3          | `mvn clean package exec:java`    | [pom.xml](https://github.com/cettia/cettia-starter-kit/blob/master/vertx3/pom.xml)          | [CettiaServerVerticle](https://github.com/cettia/cettia-starter-kit/blob/master/vertx3/src/main/java/io/cettia/starter/vertx3/CettiaServerVerticle.java)      |
+| Atmosphere     | atmosphere2     | `../mvnw jetty:run`                  | [pom.xml](https://github.com/cettia/cettia-starter-kit/blob/master/atmosphere2/pom.xml)     | [CettiaInitializer](https://github.com/cettia/cettia-starter-kit/blob/master/atmosphere2/src/main/java/io/cettia/starter/atmosphere2/CettiaInitializer.java)  |
+| Grizzly        | grizzly2        | `../mvnw clean package exec:java`    | [pom.xml](https://github.com/cettia/cettia-starter-kit/blob/master/grizzly2/pom.xml)        | [CettiaServer](https://github.com/cettia/cettia-starter-kit/blob/master/grizzly2/src/main/java/io/cettia/starter/grizzly2/CettiaServer.java)                  |
+| Java EE        | javaee7         | `../mvnw jetty:run`                  | [pom.xml](https://github.com/cettia/cettia-starter-kit/blob/master/javaee7/pom.xml)         | [CettiaInitializer](https://github.com/cettia/cettia-starter-kit/blob/master/javaee7/src/main/java/io/cettia/starter/javaee7/CettiaInitializer.java)          |
+| Netty          | netty4          | `../mvnw clean package exec:java`    | [pom.xml](https://github.com/cettia/cettia-starter-kit/blob/master/netty4/pom.xml)          | [CettiaServer](https://github.com/cettia/cettia-starter-kit/blob/master/netty4/src/main/java/io/cettia/starter/netty4/CettiaServer.java)                      |
+| Spring WebFlux | spring-webflux5 | `../mvnw spring-boot:run`            | [pom.xml](https://github.com/cettia/cettia-starter-kit/blob/master/spring-webflux5/pom.xml) | [CettiaServer](https://github.com/cettia/cettia-starter-kit/blob/master/spring-webflux5/src/main/java/io/cettia/starter/spring5/CettiaServer.java)            |
+| Spring Web MVC | spring-webmvc4  | `../mvnw spring-boot:run`            | [pom.xml](https://github.com/cettia/cettia-starter-kit/blob/master/spring-webmvc4/pom.xml)  | [CettiaServer](https://github.com/cettia/cettia-starter-kit/blob/master/spring-webmvc4/src/main/java/io/cettia/starter/spring4/CettiaServer.java )            |
+| Vert.x         | vertx2          | `../mvnw clean package vertx:runMod` | [pom.xml](https://github.com/cettia/cettia-starter-kit/blob/master/vertx2/pom.xml)          | [CettiaServerVerticle](https://github.com/cettia/cettia-starter-kit/blob/master/vertx2/src/main/java/io/cettia/starter/vertx2/CettiaServerVerticle.java)      |
+|                | vertx3          | `../mvnw clean package exec:java`    | [pom.xml](https://github.com/cettia/cettia-starter-kit/blob/master/vertx3/pom.xml)          | [CettiaServerVerticle](https://github.com/cettia/cettia-starter-kit/blob/master/vertx3/src/main/java/io/cettia/starter/vertx3/CettiaServerVerticle.java)      |
 
 Then, it will run a server that listens on port 8080 and exposes an endpoint `/cettia`. For how to integrate Cettia with the framework of your choice, see the above projects' source code and the reference documentation's [Plugging Into the Web Framework](https://cettia.io/guides/cettia-tutorial/#plugging-into-the-web-framework) section.
 
@@ -47,7 +47,7 @@ Enter the `example-web` Maven project, start a static web server as follows, and
 
 ```
 cd example-web
-mvn jetty:run -Djetty.port=8070
+../mvnw jetty:run -Djetty.port=8070
 ```
 
 #### On the fly
