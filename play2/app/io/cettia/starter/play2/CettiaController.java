@@ -43,11 +43,20 @@ public class CettiaController extends Controller {
     new ExampleServerAction().on(server);
   }
 
+  // Here we used the WebSocket transport server only
   public WebSocket websocket() {
     AsityWebSocket webSocket = new AsityWebSocket(actorSystem, materializer);
     webSocket.onwebsocket(wsAction);
 
     return webSocket;
   }
+
+  // To set up the HTTP transport server, you should either
+  //
+  // 1. Create a new route for HTTP requests and configure the Cettia client to use a proper path per transport
+  // 2. Find a way to share the same route for WebSocket handshake requests and other HTTP requests
+  //
+  //  Then, you can just set up an AsityHttpAction. For the details, see Asity's Play 2 example --
+  //  https://github.com/cettia/asity/tree/master/example-play2.
 
 }
